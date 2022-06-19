@@ -19,7 +19,7 @@ describe 'Connection tests' do
         return 1
       end
 
-      redis_handle = Redis.new(:host => REDIS_HOST, :port => REDIS_PORT, :db => 31)
+      redis_handle = Redis.new(:host => REDIS_HOST, :port => REDIS_PORT, :db => 15)
       value :redis_value, :redis => redis_handle, :key => 'rval'
       value :default_redis_value, :key => 'rval'
     end
@@ -50,7 +50,7 @@ describe 'Connection tests' do
         return 1
       end
 
-      redis_handle = Redis.new(:host => REDIS_HOST, :port => REDIS_PORT, :db => 31)
+      redis_handle = Redis.new(:host => REDIS_HOST, :port => REDIS_PORT, :db => 15)
       value :redis_value, :key => 'rval'
     end
 
@@ -72,7 +72,7 @@ describe 'Connection tests' do
         return 1
       end
 
-      redis_handle = ConnectionPool.new { Redis.new(:host => REDIS_HOST, :port => REDIS_PORT, :db => 31) }
+      redis_handle = ConnectionPool.new { Redis.new(:host => REDIS_HOST, :port => REDIS_PORT, :db => 15) }
       value :redis_value, :redis => redis_handle, :key => 'rval'
       value :default_redis_value, :key => 'rval'
     end
