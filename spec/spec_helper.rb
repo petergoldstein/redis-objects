@@ -13,7 +13,7 @@ end
 Redis.exists_returns_integer =  true
 
 # Avoid phantom remote test failures
-RUNNING_LOCALLY = !ENV['TRAVIS']
+RUNNING_LOCALLY = !(ENV['CI'] || ENV['TRAVIS'])
 
 # Code coverage reports
 require 'simplecov'
